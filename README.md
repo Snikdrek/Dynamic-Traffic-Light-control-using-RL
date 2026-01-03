@@ -14,7 +14,7 @@ At each simulation step, the agent observes traffic around each junction and sel
 
 ### How training works (high level)
 
-```mermaid
+
 flowchart LR
 	A[SUMO simulation] <--> B[TraCI control loop]
 	B --> C[State: vehicles per lane]
@@ -23,7 +23,6 @@ flowchart LR
 	E --> F[Apply traffic light state + durations]
 	B --> G[Reward: - waiting_time]
 	G --> D
-```
 
 ---
 
@@ -141,17 +140,7 @@ When `--train` is not provided, the script launches `sumo-gui`.
 
 ---
 
-## Arduino mode (optional)
 
-There is an experimental Arduino integration flag:
-
-```bash
-python train.py -m model_1 -s 500 --ard
-```
-
-Note: `train.py` currently opens a hardcoded serial port (`/dev/cu.usbmodem101`), which is a macOS-style device path. On Windows you’ll typically need to change this to something like `COM3`.
-
----
 
 ## Troubleshooting
 
